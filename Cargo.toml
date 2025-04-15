@@ -1,0 +1,31 @@
+[package]
+name = "ml-wasm"
+version = "0.1.0"
+edition = "2021"
+description = "Neural network implementation in Rust compiled to WebAssembly"
+repository = "https://github.com/yourusername/ml-wasm"
+license = "MIT"
+
+[lib]
+name = "ml_wasm"
+path = "src/lib.rs"
+crate-type = ["rlib", "cdylib"]
+
+[[bin]]
+name = "ml_wasm_bin"
+path = "src/main.rs"
+
+[dependencies]
+ndarray = "0.15"
+rand = "0.8"
+wasm-bindgen = "0.2"
+
+# Only include wasm-bindgen when targeting wasm32
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wasm-bindgen = "0.2"
+getrandom = { version = "0.2", features = ["js"] }
+console_error_panic_hook = "0.1"
+
+[profile.release]
+opt-level = 3
+lto = true
