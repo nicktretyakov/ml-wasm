@@ -17,18 +17,12 @@ This project implements a simple neural network in Rust that can be compiled to 
 
 ## Building
 
-1. Clone this repository:
-   \`\`\`
-   git clone https://github.com/yourusername/ml-wasm.git
-   cd ml-wasm
-   \`\`\`
-
-2. Build the WebAssembly module:
+ Build the WebAssembly module:
    \`\`\`
    wasm-pack build --target web
    \`\`\`
 
-3. Serve the project directory with a web server:
+ Serve the project directory with a web server:
    \`\`\`
    # Using Python's built-in server
    python -m http.server
@@ -36,7 +30,7 @@ This project implements a simple neural network in Rust that can be compiled to 
    npx http-server
    \`\`\`
 
-4. Open your browser and navigate to `http://localhost:8000` (or whatever port your server is using).
+ Open your browser and navigate to `http://localhost:8000` (or whatever port your server is using).
 
 ## How it Works
 
